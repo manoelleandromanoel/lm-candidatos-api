@@ -1,3 +1,4 @@
+
 ## CANDIDATOS API
 - API REST para Controlar uma lista de candidatos e contas correntes
 
@@ -23,36 +24,36 @@
 
 ## ROTAS DA API
 
-- Lista de candidatos
-**@GET** 'http://localhost:9000/candidatos/'
+Lista de candidatos
+- **@GET** http://localhost:9000/candidatos/
 
-- Busca um candidato pelo ID
-**@GET** 'http://localhost:9000/candidatos/{id}'
+Busca um candidato pelo ID
+- **@GET** 'http://localhost:9000/candidatos/{id}'
 
-- Adiciona um candidato
-**@POST** 'http://localhost:9000/candidatos'
+Adiciona um candidato
+- **@POST** 'http://localhost:9000/candidatos'
 Com o Json de exemplo: { "nome": "José Maria" }
 
-- Deleta um candidato
-**@DELETE** 'http://localhost:9000/candidatos/{id}'
+Deleta um candidato
+- **@DELETE** 'http://localhost:9000/candidatos/{id}'
 
-- Atualiza um candidato
-**@PUT** 'http://localhost:9000/candidatos/{id}'
+Atualiza um candidato
+- **@PUT** 'http://localhost:9000/candidatos/{id}'
 Com o Json de exemplo: { "nome": "José Maria DA SILVA" }
 
-- Lista todas as contas correntes
-**@GET** 'http://localhost:9000/contacorrente/'
+Lista todas as contas correntes
+- **@GET** 'http://localhost:9000/contacorrente/'
 
-- Busca uma conta corrente pelo ID
-**@GET** 'http://localhost:9000/contacorrente/{id}'
+Busca uma conta corrente pelo ID
+- **@GET** 'http://localhost:9000/contacorrente/{id}'
 
-- Adiciona uma conta corrente
-**@POST** 'http://localhost:9000/contacorrente/'
+Adiciona uma conta corrente
+- **@POST** 'http://localhost:9000/contacorrente/'
 Com o Json de exemplo: { "banco": "Banco do Brasil", "agencia": 12345, "numeroConta": "12345678-9", "candidato": { "id": 1 } }
 
-- Deleta uma conta corrente
-**@DELETE** 'http://localhost:9000/contacorrente/{id}'
+Deleta uma conta corrente
+- **@DELETE** 'http://localhost:9000/contacorrente/{id}'
 
-- Atualiza uma conta corrente
-**@PUT** 'http://localhost:9000/candidatos/{id}'
+Atualiza uma conta corrente
+- **@PUT** 'http://localhost:9000/candidatos/{id}'
 Com o Json de exemplo: { "banco": "Banco do Brasil DE TESTE", "agencia": 555, "numeroConta": "12345678-99999"}
