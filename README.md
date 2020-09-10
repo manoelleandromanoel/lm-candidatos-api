@@ -8,6 +8,7 @@
 - Banco de dados: Foi utilizado o [H2](https://www.h2database.com/html/main.html) que é em memória, caso queira reinicializar os testes basta parar e subir a aplicação novamente. Para acessar o console do H2: http://localhost:9000/h2
 - Framework: [SpringBoot](https://spring.io/projects/spring-boot) 2.2.6
 - Controle de dependências: [Maven](https://maven.apache.org/)
+- Documentação da API: [Swagger](https://swagger.io/)
 
 ## Padrões
 - [RESTful](https://blog.caelum.com.br/rest-principios-e-boas-praticas/)
