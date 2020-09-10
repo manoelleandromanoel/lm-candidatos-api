@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,7 @@ import com.example.lm.candidatos.api.service.CandidatoService;
 
 @RestController
 @RequestMapping("/candidatos")
+@Api(value = "Candidato", tags = {"candidato"})
 public class CandidatoController {
 
 	@Autowired
@@ -42,7 +44,7 @@ public class CandidatoController {
 	 * - Lista todos os candidatos
 	 * @return
 	 */
-	@GetMapping
+	@GetMapping(produces = "application/json")
 	public List<Candidato> findAll() {
 		return candidatoRepository.findAll();
 	}
@@ -52,7 +54,7 @@ public class CandidatoController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/{id}")
+	@GetMapping(value = "/{id}", produces = "application/json")
 	public ResponseEntity<Optional<Candidato>> findById(@PathVariable Long id) {
 		Optional<Candidato> candidato = candidatoRepository.findById(id);
 		
@@ -80,7 +82,7 @@ public class CandidatoController {
 	 * @param candidato
 	 * @return
 	 */
-	@PutMapping("/{id}")
+	@PutMapping(value = "/{id}", produces = "application/json")
 	public ResponseEntity<Candidato> updateCandidato(@PathVariable Long id, @Valid @RequestBody Candidato candidato){
 		try {
 			Candidato candidatoSalvo = candidatoService.atualizar(id, candidato);
@@ -95,7 +97,7 @@ public class CandidatoController {
 	 * - Deleta um candidato
 	 * @param id
 	 */
-	@DeleteMapping("/{id}")
+	@DeleteMapping(value = "/{id}", produces = "application/json")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteCandidato(@PathVariable Long id) {
 		candidatoRepository.deleteById(id);

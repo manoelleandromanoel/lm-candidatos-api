@@ -7,6 +7,7 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.MessageSource;
@@ -33,6 +34,7 @@ import com.example.lm.candidatos.api.service.exception.CandidatoInexistenteExcep
 
 @RestController
 @RequestMapping("/contacorrente")
+@Api(value = "Conta Corrente", tags = {"conta corrente"})
 public class ContaCorrenteController {
 
 	@Autowired
@@ -51,7 +53,7 @@ public class ContaCorrenteController {
 	 * - Lista todas as contas correntes
 	 * @return
 	 */
-	@GetMapping
+	@GetMapping(produces = "application/json")
 	public List<ContaCorrente> findAll() {
 		return contaCorrenteRepository.findAll();
 	}
@@ -61,7 +63,7 @@ public class ContaCorrenteController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/{id}")
+	@GetMapping(value = "/{id}", produces = "application/json")
 	public ResponseEntity<Optional<ContaCorrente>> findById(@PathVariable Long id) {
 		Optional<ContaCorrente> contaCorrente = contaCorrenteRepository.findById(id);
 		
