@@ -54,7 +54,7 @@
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>
 		    <scope>runtime</scope>
-			<version>1.4.199</version> <!-- a versão 1.4.200 esta com erro e o projeto não sobe -->
+			<version>2.0.206</version> <!-- a versão 1.4.200 esta com erro e o projeto não sobe -->
 		</dependency>
 		
 		<dependency>
